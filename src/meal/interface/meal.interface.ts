@@ -27,7 +27,7 @@ export interface Meal {
   order_note: string;
   updated_at: Date;
   description: string;
-  minimum_age: string;
+  minimum_age: number;
   posist_data: object;
   available_no: string;
   meal_keywords: string[];

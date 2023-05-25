@@ -1,6 +1,6 @@
 import { CalculatedOrder } from './calculated.order.interface';
 import { Log } from './logs.interface';
-import { OrderTotalAmountHistory } from './order.amout.history.interface';
+import { OrderTotalAmountHistory } from './order.amount.history.interface';
 import { OrderType } from './order.type.interface';
 
 export interface Order {

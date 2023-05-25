@@ -3,10 +3,10 @@ import { CalculatedOrderMeal } from './calc.order.meal.interface';
 
 export interface CalculatedOrder {
   id: string;
-  total_amount: string;
+  total_amount: number;
   free_delivery: boolean;
-  delivery_fee: string;
-  service_charge: string;
+  delivery_fee: number;
+  service_charge: number;
   address_details: AddressDetails;
   meals: CalculatedOrderMeal[];
   lat: string;
@@ -15,5 +15,5 @@ export interface CalculatedOrder {
   user_id: string;
   cokitchen_id: string;
   pickup: boolean;
-  prev_price: string;
+  prev_price: number;
 }
