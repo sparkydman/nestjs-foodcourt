@@ -1,9 +1,9 @@
-import { CalculatedOrder } from './calculated.order.interface';
-import { Log } from './logs.interface';
-import { OrderTotalAmountHistory } from './order.amout.history.interface';
-import { OrderType } from './order.type.interface';
+import { CalculatedOrder } from './calculated.order.dto';
+import { Log } from './logs.dto';
+import { OrderTotalAmountHistory } from './order.amout.history.dto';
+import { OrderType } from './order.type.dto';
 
-export interface Order {
+export class Order {
   id: string;
   user_id: string;
   completed: boolean;
@@ -18,7 +18,7 @@ export interface Order {
   rider_assigned: boolean;
   paid: boolean;
   order_code: string;
-  order_change: object;
+  order_change?: object = null;
   calculated_order_id: string;
   created_at: Date;
   updated_at: Date;
@@ -29,20 +29,20 @@ export interface Order {
   shop_prepared: boolean;
   no_of_mealbags_delivered: number;
   no_of_drinks_delivered: number;
-  rider_started_time: Date;
+  rider_started_time?: Date = null;
   rider_started: boolean;
-  rider_arrived_time: Date;
+  rider_arrived_time?: Date = null;
   rider_arrived: boolean;
   is_failed_trip: boolean;
   failed_trip_details: object;
   box_number: string;
-  shelf_id: string;
+  shelf_id?: string;
   order_total_amount_history: OrderTotalAmountHistory[];
   scheduled: boolean;
-  confirmed_by_id: string;
-  completed_by_id: string;
-  scheduled_delivery_date: Date;
-  scheduled_delivery_time: Date;
+  confirmed_by_id?: string;
+  completed_by_id?: string;
+  scheduled_delivery_date?: Date = null;
+  scheduled_delivery_time?: Date = null;
   is_hidden: boolean;
   calculated_order: CalculatedOrder;
   order_type: OrderType;
