@@ -10,9 +10,9 @@ export class OrderServices {
   private readonly db = knex(config[process.env.NODE_ENV]);
 
   async FindAllOrders(): Promise<Order[]> {
-    const orders = await this.db.raw(getAllOrdersQuery);
+    const orders = await this.db.raw('select * from orders');
 
-    return orders;
+    return orders.rows;
   }
 
   async FindHighestOrderedMeals(
@@ -22,6 +22,6 @@ export class OrderServices {
       calculated_order_id,
     ]);
 
-    return orders;
+    return orders.rows;
   }
 }
