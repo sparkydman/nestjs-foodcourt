@@ -74,8 +74,9 @@ export const highestMealsOrderedQuery = `
        (
         SELECT row_to_json(ml)
         FROM (
-            SELECT MAX(quantity) AS highest_quantity, name FROM meals
+            SELECT MAX(quantity) AS highest_quantity, name, id FROM meals
             WHERE calculated_order_id = calculated_orders.id
+            GROUP BY id
         ) ml
        ) AS highest_meal
        FROM calculated_orders

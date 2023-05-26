@@ -21,6 +21,7 @@ export interface CalculatedOrder {
 interface highestMeal {
   highest_quantity: number;
   name: string;
+  id: string;
 }
 export interface HighestOrderedMeal extends CalculatedOrder {
   highest_meal: highestMeal;
