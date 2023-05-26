@@ -2,7 +2,7 @@ import type { Knex } from 'knex';
 
 // Update with your config settings.
 
-const config: { [key: string]: Knex.Config } = {
+export const config: { [key: string]: Knex.Config } = {
   development: {
     client: 'postgresql',
     connection: {
@@ -52,4 +52,5 @@ const config: { [key: string]: Knex.Config } = {
   },
 };
 
-module.exports = config;
+// uncomment the following line if you want to do migrations on all platforms and comment the line after the migrations
+// module.exports = config;

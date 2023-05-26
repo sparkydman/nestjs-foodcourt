@@ -10,7 +10,6 @@ export class CreateMealData {
   brand_id?: string;
   item_type?: string;
   new?: boolean;
-  meal_id: string;
 }
 
 export const CreateMealDataSchema = Joi.object<CreateMealData, true>({
@@ -23,10 +22,6 @@ export const CreateMealDataSchema = Joi.object<CreateMealData, true>({
   active: Joi.boolean().required().default(true),
   amount: Joi.number().optional().default(0),
   brand_id: Joi.string()
-    .guid()
-    .uuid({ version: ['uuidv3', 'uuidv4', 'uuidv4'] })
-    .required(),
-  meal_id: Joi.string()
     .guid()
     .uuid({ version: ['uuidv3', 'uuidv4', 'uuidv4'] })
     .required(),

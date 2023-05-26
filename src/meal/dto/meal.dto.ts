@@ -28,6 +28,8 @@ export class CreateMeal {
   meal_keywords: string;
   internal_profit: number;
   meal_category_id: string;
+  meal_data_id: string;
+  calculated_order_id: string;
 }
 
 export const CreateMealSchema = Joi.object<CreateMeal, true>({
@@ -43,6 +45,12 @@ export const CreateMealSchema = Joi.object<CreateMeal, true>({
   item_no: Joi.number().optional(),
   summary: Joi.string().optional(),
   brand_id: Joi.string()
+    .guid({ version: ['uuidv3', 'uuidv4', 'uuidv5'] })
+    .required(),
+  meal_data_id: Joi.string()
+    .guid({ version: ['uuidv3', 'uuidv4', 'uuidv5'] })
+    .required(),
+  calculated_order_id: Joi.string()
     .guid({ version: ['uuidv3', 'uuidv4', 'uuidv5'] })
     .required(),
   calories: Joi.string().optional(),

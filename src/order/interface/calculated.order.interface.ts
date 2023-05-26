@@ -17,3 +17,11 @@ export interface CalculatedOrder {
   pickup: boolean;
   prev_price: number;
 }
+
+interface highestMeal {
+  highest_quantity: number;
+  name: string;
+}
+export interface HighestOrderedMeal extends CalculatedOrder {
+  highest_meal: highestMeal;
+}

@@ -6,13 +6,11 @@ exports.up = function (knex) {
     table.boolean('active').notNullable();
     table.integer('amount').notNullable();
     table.string('brand_id').notNullable();
-    table.string('meal_id').notNullable();
     table.string('item_type', 50).notNullable();
     table.boolean('new').notNullable();
     table.timestamps();
 
     table.foreign('brand_id').references('id').inTable('brands');
-    table.foreign('meal_id').references('id').inTable('meals');
   });
 };
 

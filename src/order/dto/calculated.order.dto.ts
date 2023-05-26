@@ -15,7 +15,6 @@ export class CreateCalculatedOrder {
   cokitchen_id: string;
   pickup: boolean;
   prev_price: number;
-  meal_id: UUID;
 }
 
 export const CreateCalculatedOrderSchema = Joi.object<
@@ -38,8 +37,4 @@ export const CreateCalculatedOrderSchema = Joi.object<
   cokitchen_id: Joi.string().required(),
   pickup: Joi.boolean().required().default(false),
   prev_price: Joi.number().optional().default(0),
-  meal_id: Joi.string()
-    .guid()
-    .uuid({ version: ['uuidv3', 'uuidv4', 'uuidv4'] })
-    .required(),
 });

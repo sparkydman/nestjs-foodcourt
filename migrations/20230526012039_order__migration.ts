@@ -15,7 +15,9 @@ exports.up = function (knex) {
     table.boolean('rider_assigned').notNullable().defaultTo(false);
     table.boolean('paid').notNullable().defaultTo(false);
     table.string('order_code').notNullable();
-    table.string('calculated_order_id', 50).notNullable();
+    table.string('calculated_order_id').notNullable();
+    table.string('order_type_id').notNullable();
+    table.string('meal_id').notNullable();
 
     table.dateTime('kitchen_verified_time').nullable();
     table.dateTime('kitchen_completed_time').nullable();
@@ -46,6 +48,8 @@ exports.up = function (knex) {
       .foreign('calculated_order_id')
       .references('id')
       .inTable('calculated_orders');
+    table.foreign('order_type_id').references('id').inTable('order_types');
+    table.foreign('meal_id').references('id').inTable('meals');
   });
 };
 

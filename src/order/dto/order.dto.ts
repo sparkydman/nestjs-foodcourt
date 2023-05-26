@@ -38,6 +38,7 @@ export class CreateOrder {
   scheduled_delivery_time?: Date = null;
   is_hidden: boolean;
   meal_id: string;
+  order_type_id: string;
 }
 
 export const CreateOrderSchema = Joi.object<CreateOrder, true>({
@@ -61,6 +62,9 @@ export const CreateOrderSchema = Joi.object<CreateOrder, true>({
     .guid({ version: ['uuidv3', 'uuidv4', 'uuidv5'] })
     .optional(),
   meal_id: Joi.string()
+    .guid({ version: ['uuidv3', 'uuidv4', 'uuidv5'] })
+    .required(),
+  order_type_id: Joi.string()
     .guid({ version: ['uuidv3', 'uuidv4', 'uuidv5'] })
     .required(),
   kitchen_verified_time: Joi.date().optional(),

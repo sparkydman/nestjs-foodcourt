@@ -27,9 +27,16 @@ exports.up = function (knex) {
     table.string('meal_keywords').nullable();
     table.integer('internal_profit').nullable().defaultTo(0);
     table.string('meal_category_id').notNullable();
+    table.string('meal_data_id').notNullable();
+    table.string('calculated_order_id').notNullable();
     table.timestamps();
 
     table.foreign('brand_id').references('id').inTable('brands');
+    table.foreign('meal_data_id').references('id').inTable('meal_data');
+    table
+      .foreign('calculated_order_id')
+      .references('id')
+      .inTable('calculated_orders');
   });
 };
 
