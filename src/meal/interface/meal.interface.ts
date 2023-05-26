@@ -11,8 +11,8 @@ export interface Meal {
   amount: string;
   images: string[];
   alcohol: boolean;
-  item_no: null;
-  summary: null;
+  item_no?: number | null;
+  summary?: string | null;
   brand_id: string;
   calories: string;
   is_addon: boolean;

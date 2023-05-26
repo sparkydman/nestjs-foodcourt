@@ -7,7 +7,7 @@ export class CreateOrderType {
   name: string;
 }
 
-enum OrderTypes {
+export enum OrderTypes {
   'CARD',
   'USSD',
   'TRANSFER',
