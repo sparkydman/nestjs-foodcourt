@@ -10,7 +10,7 @@ export class OrderServices {
   private readonly db = knex(config[process.env.NODE_ENV]);
 
   async FindAllOrders(): Promise<Order[]> {
-    const orders = await this.db.raw('select * from orders');
+    const orders = await this.db.raw(getAllOrdersQuery);
 
     return orders.rows;
   }
